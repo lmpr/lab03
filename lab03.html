@@ -35,15 +35,18 @@ and is wrapped around the whole page content, except for the footer in this exam
     </div>
 
     <div class="w3-container">
-      <p>จริงๆ แล้วถ้าให้พูดถึง Bootstrap ก็คงจะขาดเรื่องของ Layout หรือ Grid System ไปไม่ได้เลย ในความเป็นจริงเรื่องนี้ควรที่จะทำความเข้าใจก่อนใช้งาน Bootstrap เสียด้วยซ้ำ บทความนี้จะพูดถึงเรื่องของ Grid System และ Box model ของ CSS ด้วย ซึ่งจะทำให้ผู้อ่านเข้าใจ และ ปรับนำมาใช้กับงานได้อย่างง่ายขึ้น ทั้งนี้เองผู้เขียนแนะนำให้เปิดคู่มือของ Bootstrap ดูควบคู่ไปด้วยเช่นกันที่ http://getbootstrap.com/css/#grid บทความนี้เราจะพูดถึง Grid System ของ Bootstrap เวอร์ชั่น 3 ซึ่งจะแตกต่างกับเวอร์ชั่น 2 อยู่พอสมควร ถ้าจะถามผู้เขียนว่าทั้งสองเวอร์ชั่นมีความแตกต่างกันเยอะหรือเปล่า ผู้เขียนก็คงจะตอบว่าเวอร์ชั่น 3 นั้นถูกออกแบบมาได้ดีกว่า ยืดหยุ่นกว่า สามารถใช้งานกับอุปกรณ์ได้อย่างหลากหลาย และ ควบคุมการแสดงผลได้ง่ายกว่า ผู้เขียนจึงแนะนำให้ใช้ของใหม่แทนของเก่า </p>
-      <div class="w3-row">
-        <div class="w3-col m8">
-          <p><button class="w3-btn w3-padding-large w3-white w3-border w3-hover-border-black"><b>READ MORE »</b></button></p>
-        </div>
-        <div class="w3-col m4 w3-hide-small">
-          <p><span class="w3-padding-large w3-right"><b>Comments  </b> <span class="w3-tag">0</span></span></p>
-        </div>
-      </div>
+      <p>จริงๆ แล้วถ้าให้พูดถึง Bootstrap ก็คงจะขาดเรื่องของ Layout หรือ Grid System ไปไม่ได้เลย ในความเป็นจริงเรื่องนี้ควรที่จะทำความเข้าใจก่อนใช้งาน Bootstrap เสียด้วยซ้ำ บทความนี้จะพูดถึงเรื่องของ Grid System และ Box model ของ CSS ด้วย ซึ่งจะทำให้ผู้อ่านเข้าใจ และ ปรับนำมาใช้กับงานได้อย่างง่ายขึ้น ทั้งนี้เองผู้เขียนแนะนำให้เปิดคู่มือของ Bootstrap ดูควบคู่ไปด้วยเช่นกันที่ http://getbootstrap.com/css/#grid บทความนี้เราจะพูดถึง Grid System ของ Bootstrap เวอร์ชั่น 3 ซึ่งจะแตกต่างกับเวอร์ชั่น 2 อยู่พอสมควร ถ้าจะถามผู้เขียนว่าทั้งสองเวอร์ชั่นมีความแตกต่างกันเยอะหรือเปล่า ผู้เขียนก็คงจะตอบว่าเวอร์ชั่น 3 นั้นถูกออกแบบมาได้ดีกว่า ยืดหยุ่นกว่า สามารถใช้งานกับอุปกรณ์ได้อย่างหลากหลาย และ ควบคุมการแสดงผลได้ง่ายกว่า ผู้เขียนจึงแนะนำให้ใช้ของใหม่แทนของเก่า  การสร้าง Grid system
+			1. ในการสร้าง Grid system นั้น Bootstrap แนะนำให้เราสร้างแถวและคอลัมน์ไว้ใน container โดยคลาส container  ของ Bootstrap  แบ่งออกเป็น 2 ประเภท คือ container และ container-fluid สำหรับ container นั้นจะแสดงผลเนื้อหาตามที่เรากำหนดความกว้างของหน้าจอ ส่วน container-fluid  นั้นจะแสดงผลเนื้อหาเต็มความกว้างของหน้าจอของเรา โดยในที่นี้คือเราจะใช้คลาส container 
+				<div class="container">      </div>  
+ 
+			2. สร้างแถวโดยใช้  class="row" ภายใต้ class="container" โดยเราสามารถที่จะสร้างแถวได้ไม่จำกัด แต่แถวเหล่านั้นต้องอยู่ภายใต้ class="container"
+				<div class="container">
+				<div class="row"></div>
+				</div>
+			3. แต่ละแถวของ Grid system นั้นมีคอลัมน์ในแต่ละแถวได้ 12 คอลัมน์ โดยคอลัมน์ของ Grid system แบ่งออกเป็น 4 ประเภทคือ</p>
+			<img src ="http://angsila.cs.buu.ac.th/~57160591/887371/lab03/C.PNG">
+			<p>โดยที่ "int" คือจำนวนคอลัมน์ที่เราต้องการแบ่งให้กับแต่ละเนื้อหา  ตัวอย่างเช่น เราต้องการแสดงผล 2 คอลัมน์บนขนาดหน้าจอที่ >= 768 px  เราสามารถทำได้โดยการเขียนโค้ดลงไปดังนี้ </p>
+			<img src ="http://angsila.cs.buu.ac.th/~57160591/887371/lab03/e.PNG">
     </div>
   </div>
   <hr>
@@ -53,19 +56,19 @@ and is wrapped around the whole page content, except for the footer in this exam
   <img src="" style="width:100%">
     <div class="w3-container w3-padding-8">
       <h3><b>การใช้งาน Form</b></h3>
-      <h5 span class="w3-opacity">Feb 1,2017</span></h5>
+      <h5 span class="w3-opacity">Feb 9,2017</span></h5>
     </div>
 
     <div class="w3-container">
-      <p></p>
-      <div class="w3-row">
-        <div class="w3-col m8 s12">
-          <p><button class="w3-btn w3-padding-large w3-white w3-border w3-hover-border-black"><b>READ MORE »</b></button></p>
+      <p>เว็บไซต์นั้นต่างจากเอกสารธรรมดา ตรงที่สามารถตอบโต้กับผู้ใช้งานได้ เช่นการใช้ search (ค้นหา) ในเว็บไซต์ hellomyweb.com ช่องรับค่าของ search นั้นก็คือแบบฟอร์มใน html นั่นเอง
+		เมื่อได้รับค่าจากแบบฟอร์ม search แล้วที่ฝั่ง server จะนำไปประมวลผลต่อโดยจะมีโปรแกรม (CGI Program) ที่ใช้สำหรับประมวลผล CGI Program จะเขียนโดยใช้ภาษา PHP , ASP , 
+		Python และอื่นๆอีกมากมาย CGI Program ที่เราเขียนไว้จะรับค่าจาก search แล้วนำไปประมวลผลหาบทความที่ใกล้เคียงกับค่าที่รับไป 
+		ในบทความนี้เราจะมาศึกษาในเรื่องฟอร์ม ของ HTML แต่จะไม่ลงลึกไปถึงการเขียน CGI Program ซึ่งหาท่านสนใจ CGI Program ก็ให้หาอ่านจากหัวข้อของ PHP ในเว็บไซต์ของเราได้ </p>
+	  <h5>รูปแบบของ Form</h5>
+	  <img src="http://angsila.cs.buu.ac.th/~57160591/887371/lab03/1.PNG">
+	  <div class="w3-col m8">
+          <p><a href ="http://angsila.cs.buu.ac.th/~57160591/887371/lab03/form.html">READ MORE »</b></p>
         </div>
-        <div class="w3-col m4 w3-hide-small">
-          <p><span class="w3-padding-large w3-right"><b>Comments  </b> <span class="w3-badge">0</span></span></p>
-        </div>
-      </div>
     </div>
   </div>
 <!-- END BLOG ENTRIES -->
